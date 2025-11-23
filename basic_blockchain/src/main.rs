@@ -1,6 +1,5 @@
 use ::chrono::Local;
 use ::sha2::{Digest, Sha256};
-use chrono::offset::LocalResult;
 
 #[derive(Debug)]
 struct Block {
@@ -49,19 +48,24 @@ impl BlockChain {
 
         println!("{:?}", self.blocks)
     }
+
+    fn is_validBlock(&self) -> bool {
+        for i in 1..self.blocks.len() {
+            println!("The block :- {:#?}", i);
+            let current_block = &self.blocks[i];
+            let last_block = &self.blocks[i - 1];
+
+            if current_block.prev_hash != last_block.hash {
+                return false;
+            }
+        }
+
+        true
+    }
 }
 
 fn main() {
     let mut blockchain = BlockChain::new();
-    println!("Genesis block created\n");
-
-    blockchain.add_block("Alice sends 10 coins to Bob");
-    blockchain.add_block("Bob sends 5 coins to Charlie");
-    blockchain.add_block("Charlie sends 2 coins to Alice");
-
-    println!("\n📚 Full Blockchain ({} blocks):", blockchain.blocks.len());
-    let mut blockchain = BlockChain::new();
-    println!("Genesis block created\n");
 
     blockchain.add_block("Alice sends 10 coins to Bob");
     blockchain.add_block("Bob sends 5 coins to Charlie");
@@ -70,6 +74,10 @@ fn main() {
     println!("\n📚 Full Blockchain ({} blocks):", blockchain.blocks.len());
     println!("{:#?}", blockchain);
     println!("{:#?}", blockchain);
+
+    println!("Verifying the blockchain");
+
+    println!("{:#?}", blockchain.is_validBlock())
 }
 fn hash(data: &str) -> String {
     let mut hasher = Sha256::new();
