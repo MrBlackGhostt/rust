@@ -1,24 +1,75 @@
-use std::fmt::format;
-
 use ::chrono::Local;
 use ::sha2::{Digest, Sha256};
-use chrono::DateTime;
+use chrono::offset::LocalResult;
 
 #[derive(Debug)]
-struct BlockChain {
+struct Block {
     hash: String,
     prev_hash: String,
-    time_stamp: DateTime<Local>,
+    time_stamp: i64,
     data: String,
 }
+//TODO What is derive Debug
+//TODO WHat the format do
+//TODO  what thsi {:?} do
+#[derive(Debug)]
+struct BlockChain {
+    blocks: Vec<Block>,
+}
+
+impl BlockChain {
+    fn new() -> BlockChain {
+        let timestamp = Local::now().timestamp();
+        let hash_data = format!("{}{}{}", "0", "", timestamp);
+        let block = Block {
+            hash: hash(&hash_data),
+            prev_hash: String::from("0"),
+            data: String::from("GenesisBlock"),
+            time_stamp: timestamp,
+        };
+
+        BlockChain {
+            blocks: vec![block],
+        }
+    }
+
+    fn add_block(&mut self, data: &str) {
+        let timestamp = Local::now().timestamp();
+        let last_hash = self.blocks.last().unwrap().hash.clone();
+        let hash_data = format!("{}{}{}", data, timestamp, last_hash);
+
+        let block = Block {
+            hash: hash(&hash_data),
+            data: String::from(data),
+            time_stamp: timestamp,
+            prev_hash: last_hash,
+        };
+
+        self.blocks.push(block);
+
+        println!("{:?}", self.blocks)
+    }
+}
+
 fn main() {
-    let time = Local::now();
-    println!("Hello, world! time is {}", time);
-    let data = "Hello Web3";
-    let hash_value = hash(data);
-    let prev_hash = "0";
-    print!("{}", hash_value);
-    print!("{:?}", block("block_no", &data, prev_hash));
+    let mut blockchain = BlockChain::new();
+    println!("Genesis block created\n");
+
+    blockchain.add_block("Alice sends 10 coins to Bob");
+    blockchain.add_block("Bob sends 5 coins to Charlie");
+    blockchain.add_block("Charlie sends 2 coins to Alice");
+
+    println!("\n📚 Full Blockchain ({} blocks):", blockchain.blocks.len());
+    let mut blockchain = BlockChain::new();
+    println!("Genesis block created\n");
+
+    blockchain.add_block("Alice sends 10 coins to Bob");
+    blockchain.add_block("Bob sends 5 coins to Charlie");
+    blockchain.add_block("Charlie sends 2 coins to Alice");
+
+    println!("\n📚 Full Blockchain ({} blocks):", blockchain.blocks.len());
+    println!("{:#?}", blockchain);
+    println!("{:#?}", blockchain);
 }
 fn hash(data: &str) -> String {
     let mut hasher = Sha256::new();
@@ -27,16 +78,4 @@ fn hash(data: &str) -> String {
 
     let result = hasher.finalize();
     format!("{:x}", result)
-}
-
-fn block(block_no: &str, data: &str, prev_hash: &str) -> BlockChain {
-    let time_stamp = Local::now().timestamp();
-    let hash_data = format!("{}{}{}{}", data, block_no, prev_hash, time_stamp);
-    let block_unit = BlockChain {
-        hash: hash(&hash_data),
-        time_stamp: Local::now(),
-        prev_hash: String::from(prev_hash),
-        data: data.to_string(),
-    };
-    block_unit
 }
