@@ -1,0 +1,14 @@
+
+# Ignore build output directory
+/target/
+
+# Ignore OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Ignore Cargo lock for libraries (optional, keep for apps)
+Cargo.lock

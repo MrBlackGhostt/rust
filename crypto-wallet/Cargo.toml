@@ -1,0 +1,10 @@
+[package]
+name = "crypto-wallet"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ed25519-dalek = "1.0"    # For ed25519 keys and signing
+rand = "0.7"             # For randomness
+clap = { version = "4.0", features = ["derive"] }  # For CLI arguments parsing
+hex = "0.4"              # For hex string encoding/decoding
