@@ -1,17 +1,33 @@
+use clap::{Parser, Subcommand};
 use ed25519_dalek::{Keypair, Signature, Signer, Verifier};
 use hex;
 use rand::rngs::OsRng;
 
+#[derive(Parser)]
+#[command(name = "Crypto_wallet")]
+#[command(about = "A simle crypt wallet")]
+struct Cli {
+    #[command(subcommand)]
+    command: Commands,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    Create,
+    Sign { message: String },
+    Verify { signature: String, message: String },
+}
+
 #[derive(Debug)]
-struct Crypto_wallet {
+struct crypto_wallet {
     keypair: Keypair,
 }
 
-impl Crypto_wallet {
-    fn new() -> Crypto_wallet {
+impl crypto_wallet {
+    fn new() -> crypto_wallet {
         let mut csprng = OsRng;
         let keypair = Keypair::generate(&mut csprng);
-        Crypto_wallet { keypair: keypair }
+        crypto_wallet { keypair: keypair }
     }
     fn show_pub_key(&self) -> String {
         hex::encode(&self.keypair.public)
@@ -20,46 +36,54 @@ impl Crypto_wallet {
         hex::encode(&self.keypair.secret)
     }
 
-    fn sign(&self, msg: &str) -> Signature {
+    fn sign(&self, msg: &str) -> String {
         let msg_bytes = msg.as_bytes();
 
         let signature = self.keypair.sign(msg_bytes); // is it give the signature into the
-        signature
+        hex::encode(signature)
     }
 
-    fn verify_sign(
-        &self,
-        signature: &Signature,
-        message: &str,
-    ) -> Result<(), ed25519_dalek::ed25519::Error> {
-        let v = self.keypair.public.verify(message.as_bytes(), signature);
-        v
+    fn verify_sign(&self, signature: &str, message: &str) -> bool {
+        let sign_bytes = match hex::decode(signature) {
+            Ok(bytes) => bytes,
+            Err(_) => return false,
+        };
+
+        // Convert bytes to Signature struct
+        let signature = match Signature::from_bytes(&sign_bytes) {
+            Ok(sig) => sig,
+            Err(_) => return false,
+        };
+
+        self.keypair
+            .public
+            .verify(message.as_bytes(), &signature)
+            .is_ok()
     }
 }
 
 fn main() {
-    let wallet = Crypto_wallet::new();
+    let cli = Cli::parse();
 
-    println!("🔑 Wallet Created!");
-    println!("📍 Public Key:  {}", wallet.show_pub_key());
-    println!("🔒 Private Key: {}\n", wallet.show_pri_key());
+    match cli.command {
+        Commands::Create => {
+            let wallet = crypto_wallet::new();
 
-    let message = "Hello world";
-    let signature = wallet.sign(message);
+            println!("🔑 Wallet Created!");
+            println!("📍 Public Key:  {}", wallet.show_pub_key());
+            println!("🔒 Private Key: {}\n", wallet.show_pri_key());
+        }
 
-    println!("✍️  Message: {}", message);
-    println!("📝 Signature: {:?}\n", signature);
+        Commands::Sign { message } => {
+            let wallet = crypto_wallet::new();
+            let signature = wallet.sign(&message);
 
-    // Verify
-    match wallet.verify_sign(&signature, message) {
-        Ok(_) => println!("✅ Signature is VALID!"),
-        Err(_) => println!("❌ Signature is INVALID!"),
-    }
-
-    // Test with wrong message
-    println!("\n🧪 Testing with wrong message...");
-    match wallet.verify_sign(&signature, "Wrong message") {
-        Ok(_) => println!("✅ Valid (This shouldn't happen!)"),
-        Err(_) => println!("❌ Invalid (Expected!)"),
+            println!("📝 Signature: {:?}\n", signature);
+        }
+        Commands::Verify { signature, message } => {
+            let wallet = crypto_wallet::new();
+            let signature = wallet.sign(&message);
+            println!("the wallet is {}", wallet.verify_sign(&signature, &message));
+        }
     }
 }
