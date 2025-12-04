@@ -1,0 +1,9 @@
+/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/deps/solana_metrics-8e610aba5855f239.d: /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/lib.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/counter.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/datapoint.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/metrics.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/poh_timing_point.rs
+
+/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/deps/libsolana_metrics-8e610aba5855f239.rmeta: /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/lib.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/counter.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/datapoint.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/metrics.rs /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/poh_timing_point.rs
+
+/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/lib.rs:
+/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/counter.rs:
+/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/datapoint.rs:
+/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/metrics.rs:
+/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-metrics-2.2.4/src/poh_timing_point.rs:

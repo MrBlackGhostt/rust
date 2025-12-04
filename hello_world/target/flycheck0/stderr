@@ -1,0 +1,1047 @@
+warning: unused manifest key: dependencies.borsh.feature
+   0.225786125s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint: stale: changed "/Users/mrblackghost/Documents/practice/rust-pro/hello_world/src/lib.rs"
+   0.225807084s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint:           (vs) "/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/hello_world-48b86ecb53b045f3/dep-lib-hello_world"
+   0.225811542s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1764740661, nanos: 321136923 } < FileTime { seconds: 1764740709, nanos: 485804378 }
+   0.225984834s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint: fingerprint dirty for hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("hello_world", ["cdylib", "lib"], "/Users/mrblackghost/Documents/practice/rust-pro/hello_world/src/lib.rs", Edition2021) }
+   0.226007292s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/hello_world-48b86ecb53b045f3/dep-lib-hello_world", reference_mtime: FileTime { seconds: 1764740661, nanos: 321136923 }, stale: "/Users/mrblackghost/Documents/practice/rust-pro/hello_world/src/lib.rs", stale_mtime: FileTime { seconds: 1764740709, nanos: 485804378 } }))
+   0.252103709s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint: fingerprint error for hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("hello_world", ["cdylib", "lib"], "/Users/mrblackghost/Documents/practice/rust-pro/hello_world/src/lib.rs", Edition2021) }
+   0.252114084s  INFO prepare_target{force=false package_id=hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world) target="hello_world"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/hello_world-cac7e00f3f5b26e5/test-lib-hello_world`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.256858750s  INFO prepare_target{force=false package_id=litesvm v0.6.1 target="litesvm"}: cargo::core::compiler::fingerprint: fingerprint error for litesvm v0.6.1/Check { test: false }/TargetInner { ..: lib_target("litesvm", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/litesvm-0.6.1/src/lib.rs", Edition2021) }
+   0.256873584s  INFO prepare_target{force=false package_id=litesvm v0.6.1 target="litesvm"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/litesvm-bd2ded2ce3e98071/lib-litesvm`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.259193167s  INFO prepare_target{force=false package_id=solana-bpf-loader-program v2.2.4 target="solana_bpf_loader_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-bpf-loader-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_bpf_loader_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-bpf-loader-program-2.2.4/src/lib.rs", Edition2021) }
+   0.259199792s  INFO prepare_target{force=false package_id=solana-bpf-loader-program v2.2.4 target="solana_bpf_loader_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-bpf-loader-program-e6ce519bd7588084/lib-solana_bpf_loader_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.262770584s  INFO prepare_target{force=false package_id=solana-precompiles v2.2.1 target="solana_precompiles"}: cargo::core::compiler::fingerprint: fingerprint error for solana-precompiles v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_precompiles", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-precompiles-2.2.1/src/lib.rs", Edition2021) }
+   0.262777250s  INFO prepare_target{force=false package_id=solana-precompiles v2.2.1 target="solana_precompiles"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-precompiles-33b7923f805e4906/lib-solana_precompiles`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.263273000s  INFO prepare_target{force=false package_id=solana-ed25519-program v2.2.3 target="solana_ed25519_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-ed25519-program v2.2.3/Check { test: false }/TargetInner { ..: lib_target("solana_ed25519_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-ed25519-program-2.2.3/src/lib.rs", Edition2021) }
+   0.263279000s  INFO prepare_target{force=false package_id=solana-ed25519-program v2.2.3 target="solana_ed25519_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-ed25519-program-94324ccb683491fb/lib-solana_ed25519_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.263691709s  INFO prepare_target{force=false package_id=ed25519-dalek v1.0.1 target="ed25519_dalek"}: cargo::core::compiler::fingerprint: fingerprint error for ed25519-dalek v1.0.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ed25519_dalek", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ed25519-dalek-1.0.1/src/lib.rs", Edition2018) }
+   0.263697709s  INFO prepare_target{force=false package_id=ed25519-dalek v1.0.1 target="ed25519_dalek"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/ed25519-dalek-d15bee5f48430c42/lib-ed25519_dalek`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  13: cargo::ops::cargo_compile::compile_ws
+  14: cargo::ops::cargo_compile::compile_with_exec
+  15: cargo::ops::cargo_compile::compile
+  16: cargo::commands::check::exec
+  17: <cargo::cli::Exec>::exec
+  18: cargo::main
+  19: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  20: std::rt::lang_start::<()>::{closure#0}
+  21: std::rt::lang_start_internal
+  22: _main
+   0.265150917s  INFO prepare_target{force=false package_id=solana-program-runtime v2.2.4 target="solana_program_runtime"}: cargo::core::compiler::fingerprint: fingerprint error for solana-program-runtime v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_program_runtime", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-runtime-2.2.4/src/lib.rs", Edition2021) }
+   0.265156875s  INFO prepare_target{force=false package_id=solana-program-runtime v2.2.4 target="solana_program_runtime"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-program-runtime-40476b192c485863/lib-solana_program_runtime`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.272503417s  INFO prepare_target{force=false package_id=solana-transaction-context v2.2.1 target="solana_transaction_context"}: cargo::core::compiler::fingerprint: fingerprint error for solana-transaction-context v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_transaction_context", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-transaction-context-2.2.1/src/lib.rs", Edition2021) }
+   0.272511250s  INFO prepare_target{force=false package_id=solana-transaction-context v2.2.1 target="solana_transaction_context"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-transaction-context-5395ce1e40aa2484/lib-solana_transaction_context`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.272970750s  INFO prepare_target{force=false package_id=solana-signature v2.2.1 target="solana_signature"}: cargo::core::compiler::fingerprint: fingerprint error for solana-signature v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_signature", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-signature-2.2.1/src/lib.rs", Edition2021) }
+   0.272975959s  INFO prepare_target{force=false package_id=solana-signature v2.2.1 target="solana_signature"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-signature-d234885b3d798087/lib-solana_signature`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  13: cargo::ops::cargo_compile::compile_ws
+  14: cargo::ops::cargo_compile::compile_with_exec
+  15: cargo::ops::cargo_compile::compile
+  16: cargo::commands::check::exec
+  17: <cargo::cli::Exec>::exec
+  18: cargo::main
+  19: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  20: std::rt::lang_start::<()>::{closure#0}
+  21: std::rt::lang_start_internal
+  22: _main
+   0.273406334s  INFO prepare_target{force=false package_id=solana-builtins v2.2.4 target="solana_builtins"}: cargo::core::compiler::fingerprint: fingerprint error for solana-builtins v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_builtins", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-builtins-2.2.4/src/lib.rs", Edition2021) }
+   0.273411834s  INFO prepare_target{force=false package_id=solana-builtins v2.2.4 target="solana_builtins"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-builtins-5882cccb8679722c/lib-solana_builtins`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.274342875s  INFO prepare_target{force=false package_id=solana-address-lookup-table-program v2.2.4 target="solana_address_lookup_table_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-address-lookup-table-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_address_lookup_table_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-address-lookup-table-program-2.2.4/src/lib.rs", Edition2021) }
+   0.274348792s  INFO prepare_target{force=false package_id=solana-address-lookup-table-program v2.2.4 target="solana_address_lookup_table_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-address-lookup-table-program-8e16b02d09263435/lib-solana_address_lookup_table_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.275228625s  INFO prepare_target{force=false package_id=solana-compute-budget-program v2.2.4 target="solana_compute_budget_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-compute-budget-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_compute_budget_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-compute-budget-program-2.2.4/src/lib.rs", Edition2021) }
+   0.275234292s  INFO prepare_target{force=false package_id=solana-compute-budget-program v2.2.4 target="solana_compute_budget_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-compute-budget-program-6e877ee8f6cfb65f/lib-solana_compute_budget_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.275678792s  INFO prepare_target{force=false package_id=solana-config-program v2.2.4 target="solana_config_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-config-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_config_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-config-program-2.2.4/src/lib.rs", Edition2021) }
+   0.275683834s  INFO prepare_target{force=false package_id=solana-config-program v2.2.4 target="solana_config_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-config-program-6521fdb2fd91b3f6/lib-solana_config_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.276601167s  INFO prepare_target{force=false package_id=solana-loader-v4-program v2.2.4 target="solana_loader_v4_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-loader-v4-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_loader_v4_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-loader-v4-program-2.2.4/src/lib.rs", Edition2021) }
+   0.276606375s  INFO prepare_target{force=false package_id=solana-loader-v4-program v2.2.4 target="solana_loader_v4_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-loader-v4-program-01c5a8cab2294789/lib-solana_loader_v4_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.277550250s  INFO prepare_target{force=false package_id=solana-stake-program v2.2.4 target="solana_stake_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-stake-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_stake_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-stake-program-2.2.4/src/lib.rs", Edition2021) }
+   0.277555417s  INFO prepare_target{force=false package_id=solana-stake-program v2.2.4 target="solana_stake_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-stake-program-d6715ab0085ad3e8/lib-solana_stake_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.278591750s  INFO prepare_target{force=false package_id=solana-genesis-config v2.2.1 target="solana_genesis_config"}: cargo::core::compiler::fingerprint: fingerprint error for solana-genesis-config v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_genesis_config", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-genesis-config-2.2.1/src/lib.rs", Edition2021) }
+   0.278599875s  INFO prepare_target{force=false package_id=solana-genesis-config v2.2.1 target="solana_genesis_config"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-genesis-config-b1856b259bf22546/lib-solana_genesis_config`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.279596000s  INFO prepare_target{force=false package_id=solana-keypair v2.2.1 target="solana_keypair"}: cargo::core::compiler::fingerprint: fingerprint error for solana-keypair v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_keypair", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-keypair-2.2.1/src/lib.rs", Edition2021) }
+   0.279601500s  INFO prepare_target{force=false package_id=solana-keypair v2.2.1 target="solana_keypair"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-keypair-ad7aeda6a02eaf80/lib-solana_keypair`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  13: cargo::ops::cargo_compile::compile_ws
+  14: cargo::ops::cargo_compile::compile_with_exec
+  15: cargo::ops::cargo_compile::compile
+  16: cargo::commands::check::exec
+  17: <cargo::cli::Exec>::exec
+  18: cargo::main
+  19: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  20: std::rt::lang_start::<()>::{closure#0}
+  21: std::rt::lang_start_internal
+  22: _main
+   0.280106750s  INFO prepare_target{force=false package_id=ed25519-dalek-bip32 v0.2.0 target="ed25519_dalek_bip32"}: cargo::core::compiler::fingerprint: fingerprint error for ed25519-dalek-bip32 v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ed25519_dalek_bip32", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ed25519-dalek-bip32-0.2.0/src/lib.rs", Edition2018) }
+   0.280115375s  INFO prepare_target{force=false package_id=ed25519-dalek-bip32 v0.2.0 target="ed25519_dalek_bip32"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/ed25519-dalek-bip32-33e1524fcb8ef732/lib-ed25519_dalek_bip32`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: cargo::core::compiler::compile
+  13: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  14: cargo::ops::cargo_compile::compile_ws
+  15: cargo::ops::cargo_compile::compile_with_exec
+  16: cargo::ops::cargo_compile::compile
+  17: cargo::commands::check::exec
+  18: <cargo::cli::Exec>::exec
+  19: cargo::main
+  20: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  21: std::rt::lang_start::<()>::{closure#0}
+  22: std::rt::lang_start_internal
+  23: _main
+   0.280737834s  INFO prepare_target{force=false package_id=solana-signer v2.2.1 target="solana_signer"}: cargo::core::compiler::fingerprint: fingerprint error for solana-signer v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_signer", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-signer-2.2.1/src/lib.rs", Edition2021) }
+   0.280742917s  INFO prepare_target{force=false package_id=solana-signer v2.2.1 target="solana_signer"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-signer-184a75c6e3ba00d8/lib-solana_signer`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: cargo::core::compiler::compile
+  12: cargo::core::compiler::compile
+  13: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  14: cargo::ops::cargo_compile::compile_ws
+  15: cargo::ops::cargo_compile::compile_with_exec
+  16: cargo::ops::cargo_compile::compile
+  17: cargo::commands::check::exec
+  18: <cargo::cli::Exec>::exec
+  19: cargo::main
+  20: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  21: std::rt::lang_start::<()>::{closure#0}
+  22: std::rt::lang_start_internal
+  23: _main
+   0.281685334s  INFO prepare_target{force=false package_id=solana-system-program v2.2.4 target="solana_system_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-system-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_system_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-2.2.4/src/lib.rs", Edition2021) }
+   0.281690584s  INFO prepare_target{force=false package_id=solana-system-program v2.2.4 target="solana_system_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-system-program-4f7a6d756032815e/lib-solana_system_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.282623000s  INFO prepare_target{force=false package_id=solana-vote-program v2.2.4 target="solana_vote_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-vote-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_vote_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-vote-program-2.2.4/src/lib.rs", Edition2021) }
+   0.282628250s  INFO prepare_target{force=false package_id=solana-vote-program v2.2.4 target="solana_vote_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-vote-program-19e34445d625921a/lib-solana_vote_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.283771875s  INFO prepare_target{force=false package_id=solana-transaction v2.2.1 target="solana_transaction"}: cargo::core::compiler::fingerprint: fingerprint error for solana-transaction v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_transaction", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-transaction-2.2.1/src/lib.rs", Edition2021) }
+   0.283776834s  INFO prepare_target{force=false package_id=solana-transaction v2.2.1 target="solana_transaction"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-transaction-003574182670ba72/lib-solana_transaction`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.284581084s  INFO prepare_target{force=false package_id=solana-zk-elgamal-proof-program v2.2.4 target="solana_zk_elgamal_proof_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-zk-elgamal-proof-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_zk_elgamal_proof_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-zk-elgamal-proof-program-2.2.4/src/lib.rs", Edition2021) }
+   0.284586417s  INFO prepare_target{force=false package_id=solana-zk-elgamal-proof-program v2.2.4 target="solana_zk_elgamal_proof_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-zk-elgamal-proof-program-07f16f60b60a8d7b/lib-solana_zk_elgamal_proof_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.285210917s  INFO prepare_target{force=false package_id=solana-zk-sdk v2.2.4 target="solana_zk_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for solana-zk-sdk v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_zk_sdk", ["cdylib", "rlib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-zk-sdk-2.2.4/src/lib.rs", Edition2021) }
+   0.285216417s  INFO prepare_target{force=false package_id=solana-zk-sdk v2.2.4 target="solana_zk_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-zk-sdk-a6ca3df19690f795/lib-solana_zk_sdk`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.286582459s  INFO prepare_target{force=false package_id=solana-zk-token-proof-program v2.2.4 target="solana_zk_token_proof_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-zk-token-proof-program v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_zk_token_proof_program", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-zk-token-proof-program-2.2.4/src/lib.rs", Edition2021) }
+   0.286587750s  INFO prepare_target{force=false package_id=solana-zk-token-proof-program v2.2.4 target="solana_zk_token_proof_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-zk-token-proof-program-4d299c8a31b69ac6/lib-solana_zk_token_proof_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.287222917s  INFO prepare_target{force=false package_id=solana-zk-token-sdk v2.2.4 target="solana_zk_token_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for solana-zk-token-sdk v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_zk_token_sdk", ["cdylib", "rlib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-zk-token-sdk-2.2.4/src/lib.rs", Edition2021) }
+   0.287228500s  INFO prepare_target{force=false package_id=solana-zk-token-sdk v2.2.4 target="solana_zk_token_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-zk-token-sdk-2ac4c53c892d706d/lib-solana_zk_token_sdk`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.288294125s  INFO prepare_target{force=false package_id=solana-compute-budget-instruction v2.2.4 target="solana_compute_budget_instruction"}: cargo::core::compiler::fingerprint: fingerprint error for solana-compute-budget-instruction v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_compute_budget_instruction", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-compute-budget-instruction-2.2.4/src/lib.rs", Edition2021) }
+   0.288299500s  INFO prepare_target{force=false package_id=solana-compute-budget-instruction v2.2.4 target="solana_compute_budget_instruction"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-compute-budget-instruction-520dc201e86d7bbf/lib-solana_compute_budget_instruction`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.289176167s  INFO prepare_target{force=false package_id=solana-builtins-default-costs v2.2.4 target="solana_builtins_default_costs"}: cargo::core::compiler::fingerprint: fingerprint error for solana-builtins-default-costs v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_builtins_default_costs", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-builtins-default-costs-2.2.4/src/lib.rs", Edition2021) }
+   0.289181334s  INFO prepare_target{force=false package_id=solana-builtins-default-costs v2.2.4 target="solana_builtins_default_costs"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-builtins-default-costs-cebb6674a7337980/lib-solana_builtins_default_costs`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.290152167s  INFO prepare_target{force=false package_id=solana-svm-transaction v2.2.4 target="solana_svm_transaction"}: cargo::core::compiler::fingerprint: fingerprint error for solana-svm-transaction v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_svm_transaction", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-svm-transaction-2.2.4/src/lib.rs", Edition2021) }
+   0.290157500s  INFO prepare_target{force=false package_id=solana-svm-transaction v2.2.4 target="solana_svm_transaction"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-svm-transaction-5aa6f929f74c1d3a/lib-solana_svm_transaction`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.290550917s  INFO prepare_target{force=false package_id=solana-fee v2.2.4 target="solana_fee"}: cargo::core::compiler::fingerprint: fingerprint error for solana-fee v2.2.4/Check { test: false }/TargetInner { ..: lib_target("solana_fee", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-fee-2.2.4/src/lib.rs", Edition2021) }
+   0.290555667s  INFO prepare_target{force=false package_id=solana-fee v2.2.4 target="solana_fee"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-fee-facb220fef685a68/lib-solana_fee`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.290864750s  INFO prepare_target{force=false package_id=solana-sdk v2.2.1 target="solana_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for solana-sdk v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_sdk", ["cdylib", "rlib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sdk-2.2.1/src/lib.rs", Edition2021) }
+   0.290869875s  INFO prepare_target{force=false package_id=solana-sdk v2.2.1 target="solana_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-sdk-723b6983e2aede8f/lib-solana_sdk`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.292942584s  INFO prepare_target{force=false package_id=solana-client-traits v2.2.1 target="solana_client_traits"}: cargo::core::compiler::fingerprint: fingerprint error for solana-client-traits v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_client_traits", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-client-traits-2.2.1/src/lib.rs", Edition2021) }
+   0.292947709s  INFO prepare_target{force=false package_id=solana-client-traits v2.2.1 target="solana_client_traits"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-client-traits-26570ff5ad8548ed/lib-solana_client_traits`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.293711417s  INFO prepare_target{force=false package_id=solana-offchain-message v2.2.1 target="solana_offchain_message"}: cargo::core::compiler::fingerprint: fingerprint error for solana-offchain-message v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_offchain_message", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-offchain-message-2.2.1/src/lib.rs", Edition2021) }
+   0.293716709s  INFO prepare_target{force=false package_id=solana-offchain-message v2.2.1 target="solana_offchain_message"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-offchain-message-25ed87f99889a8eb/lib-solana_offchain_message`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.294375375s  INFO prepare_target{force=false package_id=solana-presigner v2.2.1 target="solana_presigner"}: cargo::core::compiler::fingerprint: fingerprint error for solana-presigner v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_presigner", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-presigner-2.2.1/src/lib.rs", Edition2021) }
+   0.294380292s  INFO prepare_target{force=false package_id=solana-presigner v2.2.1 target="solana_presigner"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-presigner-003ebd4953c776b2/lib-solana_presigner`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.294631209s  INFO prepare_target{force=false package_id=solana-quic-definitions v2.3.1 target="solana_quic_definitions"}: cargo::core::compiler::fingerprint: fingerprint error for solana-quic-definitions v2.3.1/Check { test: false }/TargetInner { ..: lib_target("solana_quic_definitions", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-quic-definitions-2.3.1/src/lib.rs", Edition2021) }
+   0.294636750s  INFO prepare_target{force=false package_id=solana-quic-definitions v2.3.1 target="solana_quic_definitions"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-quic-definitions-ea76e4e4e55d7a51/lib-solana_quic_definitions`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.294839417s  INFO prepare_target{force=false package_id=solana-rent-collector v2.3.0 target="solana_rent_collector"}: cargo::core::compiler::fingerprint: fingerprint error for solana-rent-collector v2.3.0/Check { test: false }/TargetInner { ..: lib_target("solana_rent_collector", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-rent-collector-2.3.0/src/lib.rs", Edition2021) }
+   0.294844625s  INFO prepare_target{force=false package_id=solana-rent-collector v2.3.0 target="solana_rent_collector"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-rent-collector-314bc41228dacd13/lib-solana_rent_collector`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.295447209s  INFO prepare_target{force=false package_id=solana-system-transaction v2.2.1 target="solana_system_transaction"}: cargo::core::compiler::fingerprint: fingerprint error for solana-system-transaction v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_system_transaction", ["lib"], "/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-transaction-2.2.1/src/lib.rs", Edition2021) }
+   0.295452417s  INFO prepare_target{force=false package_id=solana-system-transaction v2.2.1 target="solana_system_transaction"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mrblackghost/Documents/practice/rust-pro/hello_world/target/debug/.fingerprint/solana-system-transaction-8c77b52400a95fe6/lib-solana_system_transaction`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+    Checking ed25519-dalek v1.0.1
+    Checking hello_world v0.1.0 (/Users/mrblackghost/Documents/practice/rust-pro/hello_world)
+error: could not compile `ed25519-dalek` (lib) due to 5 previous errors
+warning: build failed, waiting for other jobs to finish...
