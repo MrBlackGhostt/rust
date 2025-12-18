@@ -1,0 +1,8 @@
+[package]
+name = "double-contract"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+borsh = "1.6.0"
+solana-program = "3.0.0"
