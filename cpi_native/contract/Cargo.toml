@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 borsh = "1.6.0"
 solana-program = "3.0.0"
+solana-sdk = "3.0.0"

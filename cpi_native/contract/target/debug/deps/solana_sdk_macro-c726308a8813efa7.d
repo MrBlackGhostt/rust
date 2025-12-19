@@ -1,0 +1,5 @@
+/Users/mrblackghost/Documents/practice/rust-pro/cpi_native/contract/target/debug/deps/solana_sdk_macro-c726308a8813efa7.d: /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sdk-macro-3.0.0/src/lib.rs
+
+/Users/mrblackghost/Documents/practice/rust-pro/cpi_native/contract/target/debug/deps/libsolana_sdk_macro-c726308a8813efa7.dylib: /Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sdk-macro-3.0.0/src/lib.rs
+
+/Users/mrblackghost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sdk-macro-3.0.0/src/lib.rs:

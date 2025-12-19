@@ -1,0 +1,1 @@
+std::result::Result<&solana_program::solana_account_info::AccountInfo<'_>, solana_program::program_error::ProgramError>

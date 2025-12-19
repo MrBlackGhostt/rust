@@ -3,7 +3,6 @@ use solana_program::{
     account_info::{AccountInfo, next_account_info},
     entrypoint,
     entrypoint::ProgramResult,
-    example_mocks::solana_sdk::sysvar::instructions,
     instruction::{AccountMeta, Instruction},
     msg,
     program::invoke,
@@ -16,8 +15,9 @@ struct Count {
     no: u32,
 }
 
-#[derive(BorshSerialize, BorshDeserialize)]
+#[derive(BorshSerialize, BorshDeserialize, Debug)]
 enum CountInstruction {
+    Init(u32),
     Double,
     Half,
 }
@@ -29,30 +29,55 @@ pub fn process_instructions(
     accounts: &[AccountInfo],
     instructions: &[u8],
 ) -> ProgramResult {
+    msg!("CPI program execution");
+    msg!("Program ID: {}", program_id);
     let mut iter = accounts.iter();
-    let signer = next_account_info(&mut iter)?;
-    let programId = next_account_info(&mut iter)?;
-    let instructions = CountInstruction::try_from_slice(instructions)?;
+    //The data_account in which the value to be change
+    let siger = next_account_info(&mut iter)?;
+    let data_account = next_account_info(&mut iter)?;
+    let program_id = next_account_info(&mut iter)?;
 
+    let instructions = CountInstruction::try_from_slice(instructions)?;
+    msg!("Data Account: {}", data_account.key);
+    msg!("Target Program: {}", program_id.key);
+    msg!("Received instruction bytes: {:?}", instructions);
     match instructions {
+        CountInstruction::Init(amount) => {
+            let inx = Instruction {
+                program_id: *program_id.key,
+                accounts: vec![
+                    AccountMeta::new(*siger.key, true),
+                    AccountMeta::new(*data_account.key, false),
+                ],
+                data: vec![0],
+            };
+            msg!("Invoking with  {:?}", inx.data);
+            invoke(&inx, &[data_account.clone()])?;
+            msg!("✅ CPI: Init completed successfully");
+        }
+
         CountInstruction::Double => {
             let inx = Instruction {
-                program_id: *programId.key,
-                accounts: vec![AccountMeta::new(*signer.key, true)],
-                data: vec![],
+                program_id: *program_id.key,
+                accounts: vec![AccountMeta::new(*data_account.key, false)],
+                data: vec![1],
             };
-            invoke(&inx, &[signer.clone(), programId.clone()])?;
+            msg!("Invoking with  {:?}", inx.data);
+            invoke(&inx, &[data_account.clone()])?;
+            msg!("✅ CPI: Double completed successfully");
         }
         CountInstruction::Half => {
             let inx = Instruction {
-                program_id: *programId.key,
-                accounts: vec![AccountMeta::new(*signer.key, true)],
-                data: vec![],
+                program_id: *program_id.key,
+
+                accounts: vec![AccountMeta::new(*data_account.key, false)],
+                data: vec![2],
             };
-            invoke(&inx, &[signer.clone(), programId.clone()])?;
+            msg!("Invoking with  {:?}", inx.data);
+            invoke(&inx, &[data_account.clone()])?;
+            msg!("✅ CPI: Half completed successfully");
         }
     }
 
     Ok(())
 }
-

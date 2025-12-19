@@ -12,6 +12,12 @@ import { LiteSVM } from "litesvm";
 import * as borsh from "borsh";
 import { deserialize } from "borsh";
 
+// enum CountInstruction {
+//     Init(u32),  // Number 0
+//     Double,     // Number 1  ← You want this!
+//     Half,       // Number 2
+// }
+//
 class CountStruct {
   no: number;
   constructor(no: number) {
@@ -31,10 +37,11 @@ test("Double the no", () => {
   const programId = PublicKey.unique();
 
   const dataAccount = new Keypair();
-
+  const cpiProgramId = PublicKey.unique();
   svm.airdrop(signer.publicKey, BigInt(LAMPORTS_PER_SOL * 2));
 
   svm.addProgramFromFile(programId, "./double.so");
+  svm.addProgramFromFile(cpiProgramId, "./cli.so");
 
   let ixn = [
     SystemProgram.createAccount({
@@ -57,6 +64,7 @@ test("Double the no", () => {
   txn.sign(signer, dataAccount);
   svm.sendTransaction(txn);
 
+  svm.expireBlockhash();
   const account = svm.getAccount(dataAccount.publicKey);
 
   console.log(`the Data account is ${account}`);
@@ -65,18 +73,15 @@ test("Double the no", () => {
   let balanceDataAccount = account?.lamports;
   expect(balanceDataAccount).toBe(LAMPORTS_PER_SOL * 1.02);
 
-  // Make the cpi to inc the No in the dataAccount
-  //How to put the value in the data accountdouble.so
   //transaction to put the value
 
   const data = borsh.serialize(CountStruct.schema, { no: 10 });
+
+  //Putting the data to the dataAccount
   svm.setAccount(dataAccount.publicKey, {
     executable: false,
-    /** Identifier of the program that owns the account */
     owner: programId,
-    /** Number of lamports assigned to the account */
     lamports: 1030000000,
-    /** Optional data assigned to the account */
     data: data,
   });
   console.log(`DataAccountpublickey ${dataAccount.publicKey}`);
@@ -93,16 +98,84 @@ test("Double the no", () => {
   }
   expect(data2.no).toEqual(10);
 
-  // cpi to double constact
-
-  let ixn2 = TransactionInstruction({
-   keys: Array<AccountMeta>;
+  // Call the Double instructions in the double constact
+  let doubleEnumInstructionData = Buffer.from([1]);
+  let ixn2 = new TransactionInstruction({
+    keys: [
+      {
+        pubkey: dataAccount.publicKey,
+        isSigner: false,
+        isWritable: true,
+      },
+    ], // Array<AccountMeta>
     /**
      * Program Id to execute
      */
-    programId: PublicKey;
-    /**
-     * Program input
-     */
-    data: Buffer;});
+    programId: programId,
+    data: doubleEnumInstructionData,
+  });
+
+  const transactionToDoubleContract = new Transaction({
+    recentBlockhash: svm.latestBlockhash(),
+  }).add(ixn2);
+
+  transactionToDoubleContract.feePayer = signer.publicKey;
+
+  transactionToDoubleContract.sign(signer, dataAccount);
+  svm.sendTransaction(transactionToDoubleContract);
+
+  // ✅ Check the result
+  const dataAccount3 = svm.getAccount(dataAccount.publicKey);
+  if (!dataAccount3) {
+    throw new Error("dataAccount3 is not present");
+  }
+  const data3 = borsh.deserialize(CountStruct.schema, dataAccount3?.data);
+  if (!data3 || !data3.no) {
+    throw new Error("data is not there");
+  }
+  console.log("After Double:", data3.no); // Should print 20
+  expect(data3.no).toEqual(20);
+
+  // Cpi to the transactionToDoubleContract
+
+  const cpiToDoubleInx = Buffer.from([1]);
+  const cpiInstruction = new TransactionInstruction({
+    keys: [
+      { pubkey: signer.publicKey, isSigner: true, isWritable: false },
+      {
+        pubkey: dataAccount.publicKey,
+        isSigner: false,
+        isWritable: true,
+      },
+      {
+        pubkey: programId,
+        isSigner: false,
+        isWritable: true,
+      },
+    ],
+    programId: cpiProgramId,
+    data: cpiToDoubleInx,
+  });
+  svm.expireBlockhash();
+  const cpiTransaction = new Transaction({
+    recentBlockhash: svm.latestBlockhash(),
+  }).add(cpiInstruction);
+
+  cpiTransaction.feePayer = signer.publicKey;
+  cpiTransaction.sign(signer);
+  // ✅ FIX 1: Send the transaction!
+  const cpiResult = svm.sendTransaction(cpiTransaction);
+  console.log(`the transaction ${cpiResult}`);
+
+  // ✅ Check the result
+  const dataAccount4 = svm.getAccount(dataAccount.publicKey);
+  if (!dataAccount4) {
+    throw new Error("dataAccount3 is not present");
+  }
+  const data4 = borsh.deserialize(CountStruct.schema, dataAccount4?.data);
+  if (!data4 || !data4.no) {
+    throw new Error("data is not there");
+  }
+  console.log("After CPIDouble:", data4.no); // Should print 20
+  expect(data4.no).toEqual(40);
 });
